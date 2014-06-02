@@ -20,10 +20,14 @@ anomalityFinder <- function (d="2013-01-21")
         k[i] <- median(count(df=r.temp,var="date")$freq)
         #print (k[i])
     }
-    barplot(k,xlab="Часы",ylab="Транзакции",axes=T,axisnames=T,col=3, main="Среднее значение")    
-    barplot(j,xlab="Часы",ylab="Транзакции",axes=T,axisnames=T,col=7, main=d, sub="Операционный день")
+    
+    barplot(k,xlab="Часы",ylab="Транзакции",axes=T,axisnames=T,col="gray",ylim=c(0,35))
+    par(new=TRUE)
+    barplot(j,xlab="Часы",ylab="Транзакции",axes=T,axisnames=T,col="yellow",ylim=c(0,35), main=d, sub="Операционный день")
     # примерно 83000 руб оборота не получено
     dev.off()
-    barplot(j,xlab="Часы",ylab="Транзакции",axes=T,axisnames=T,col=7, main=d, sub="Операционный день")
+    barplot(k,xlab="Часы",ylab="Транзакции",axes=T,axisnames=T,col="gray",ylim=c(0,35))
+    par(new=TRUE)
+    barplot(j,xlab="Часы",ylab="Транзакции",axes=T,axisnames=T,col="yellow",ylim=c(0,35), main=d, sub="Операционный день")
 }
 anomalityFinder()

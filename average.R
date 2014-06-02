@@ -12,6 +12,6 @@ k <- c()
 for (i in 0:23) {
     r.temp <- r.full[r.full$hour == i,]
     k[i] <- median(count(df=r.temp,var="date")$freq)
-    #print (k[i])
+    print (k[i])
 }
-barplot(k,xlab="Часы",ylab="Транзакции",axes=T,axisnames=T,col=3, main="Среднее значение")
+barplot(k,xlab="Часы",ylab="Транзакции",axes=T,axisnames=T,col=3, main="Среднее значение", ylim=c(0,35))
